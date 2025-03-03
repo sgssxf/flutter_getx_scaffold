@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:getx_scaffold/getx_scaffold.dart';
 
-/// Add a value in SharedPref based on their type - Must be a String, int, bool, double, Map<String, dynamic> or StringList
+/// Add a value in SharedPref based on their type - Must be a String, int, bool, double, `Map<String, dynamic>` or StringList
 Future<bool> setValue(String key, dynamic value, {bool print = true}) async {
   if (print) log('${value.runtimeType} - $key : $value', 'SharedPreferences');
 
@@ -63,10 +63,8 @@ String getStringAsync(String key, {String defaultValue = ''}) {
 }
 
 /// Returns a JSON if exists in SharedPref
-Map<String, dynamic> getJSONAsync(String key,
-    {Map<String, dynamic>? defaultValue}) {
-  if (sharedPreferences.containsKey(key) &&
-      (sharedPreferences.getString(key)?.isNotEmpty ?? false)) {
+Map<String, dynamic> getJSONAsync(String key, {Map<String, dynamic>? defaultValue}) {
+  if (sharedPreferences.containsKey(key) && (sharedPreferences.getString(key)?.isNotEmpty ?? false)) {
     return jsonDecode(sharedPreferences.getString(key)!);
   } else {
     return defaultValue ?? {};

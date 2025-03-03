@@ -12,7 +12,7 @@ import 'package:flutter/widgets.dart';
  * @description: 
  */
 
-/// 扩展 List<String>
+/// 扩展 `List<String>`
 extension ExStringList<E> on List<String> {
   /// 是否存在指定值
   bool hasValue(String val) {
@@ -38,7 +38,7 @@ extension ExList<T> on List<T> {
   }
 }
 
-/// 扩展 List<Widget>
+/// 扩展 `List<Widget>`
 extension ExWidgetList<E> on List<Widget> {
   /// 转 Wrap
   Widget toWrap({
@@ -140,8 +140,7 @@ extension ExWidgetList<E> on List<Widget> {
     double? cacheExtent,
     int? semanticChildCount,
     DragStartBehavior dragStartBehavior = DragStartBehavior.start,
-    ScrollViewKeyboardDismissBehavior keyboardDismissBehavior =
-        ScrollViewKeyboardDismissBehavior.manual,
+    ScrollViewKeyboardDismissBehavior keyboardDismissBehavior = ScrollViewKeyboardDismissBehavior.manual,
     String? restorationId,
     Clip clipBehavior = Clip.hardEdge,
     Widget? separator,

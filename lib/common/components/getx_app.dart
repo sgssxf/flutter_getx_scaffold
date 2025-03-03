@@ -44,8 +44,7 @@ class GetxApp extends StatelessWidget {
   final Locale? locale;
   final Locale? fallbackLocale;
   final Iterable<LocalizationsDelegate<dynamic>>? localizationsDelegates;
-  final Locale? Function(List<Locale>?, Iterable<Locale>)?
-      localeListResolutionCallback;
+  final Locale? Function(List<Locale>?, Iterable<Locale>)? localeListResolutionCallback;
   final Locale? Function(Locale?, Iterable<Locale>)? localeResolutionCallback;
   final Iterable<Locale> supportedLocales;
   final bool debugShowMaterialGrid;
@@ -72,7 +71,7 @@ class GetxApp extends StatelessWidget {
   final Duration? transitionDuration;
   final bool? defaultGlobalState;
   final SmartManagement smartManagement;
-  final Bindings? initialBinding;
+  final Binding? initialBinding;
   final GetPage<dynamic>? unknownRoute;
   final ThemeData? highContrastTheme;
   final ThemeData? highContrastDarkTheme;
@@ -208,7 +207,7 @@ class GetxApp extends StatelessWidget {
           transitionDuration: transitionDuration,
           defaultGlobalState: defaultGlobalState,
           smartManagement: smartManagement,
-          initialBinding: initialBinding,
+          binds: [],
           unknownRoute: unknownRoute,
           highContrastTheme: highContrastTheme,
           highContrastDarkTheme: highContrastDarkTheme,
@@ -221,8 +220,7 @@ class GetxApp extends StatelessWidget {
             GlobalService.to.updateNavigationBar(context);
             // 不随系统字体缩放比例
             return MediaQuery(
-              data: MediaQuery.of(context)
-                  .copyWith(textScaler: const TextScaler.linear(1.0)),
+              data: MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(1.0)),
               child: builder == null ? widget : builder!(context, widget),
             );
           },

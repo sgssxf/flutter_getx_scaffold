@@ -1,4 +1,4 @@
-library widgets;
+library;
 
 /**
  * @author: Kxmrg

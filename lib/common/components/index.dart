@@ -1,4 +1,4 @@
-library components;
+library;
 
 /**
  * @author: Kxmrg

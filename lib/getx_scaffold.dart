@@ -1,4 +1,4 @@
-library getx_scaffold;
+library;
 
 /**
  * @author: Kxmrg

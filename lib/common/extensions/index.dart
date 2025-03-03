@@ -1,4 +1,4 @@
-library extensions;
+library;
 
 /**
  * @author: Kxmrg

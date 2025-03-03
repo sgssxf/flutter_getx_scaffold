@@ -1,4 +1,4 @@
-library common;
+library;
 
 /**
  * @author: Kxmrg
@@ -15,13 +15,12 @@ export 'package:event_bus/event_bus.dart';
 export 'package:flutter_screenutil/flutter_screenutil.dart';
 export 'package:device_info_plus/device_info_plus.dart';
 export 'package:url_launcher/url_launcher.dart';
-export 'package:flutter/widgets.dart';
+export 'package:flutter/widgets.dart' hide VoidCallback;
 export 'package:lottie/lottie.dart';
 export 'package:flutter_spinkit/flutter_spinkit.dart';
 export 'package:dio/dio.dart';
 export 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
-export 'package:extended_image/extended_image.dart'
-    hide MultipartFile, DoubleExtension;
+export 'package:extended_image/extended_image.dart' hide MultipartFile, DoubleExtension;
 export 'package:permission_handler/permission_handler.dart';
 export 'package:slider_captcha/slider_captcha.dart';
 export 'package:flutter_easyloading/flutter_easyloading.dart';
