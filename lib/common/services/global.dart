@@ -22,7 +22,7 @@ typedef LocaleChangeCallback = Function(Locale locale);
 
 /// 全局服务
 class GlobalService extends GetxService with WidgetsBindingObserver {
-  static GlobalService get to => Get.find();
+  static GlobalService get to => Get.put(GlobalService());
   late EventBus eventBus;
   late SharedPreferences sharedPreferences;
   PackageInfo? _packageInfo;
