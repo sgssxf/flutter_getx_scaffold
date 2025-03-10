@@ -26,16 +26,14 @@ class HttpService extends GetxService {
 
   static HttpService get to => Get.put(HttpService());
 
-  late final Dio _dio;
-  Dio get dio => _dio;
-
+  final Dio _dio = Dio();
   // 取消请求token
   final CancelToken _cancelToken = CancelToken();
 
   /// 初始化
   /// [timeout] 请求超时时间
   Future<HttpService> init({int timeout = 10}) async {
-    BaseOptions options = BaseOptions(
+    _dio.options = BaseOptions(
         connectTimeout: Duration(seconds: timeout),
         receiveTimeout: Duration(seconds: timeout),
         sendTimeout: Duration(seconds: timeout),
@@ -44,10 +42,8 @@ class HttpService extends GetxService {
         headers: {
           'Accept': 'application/json',
         });
-    // 初始化dio
-    _dio = Dio(options);
     // Log拦截器
-    dio.interceptors.add(
+    _dio.interceptors.add(
       PrettyDioLogger(
         showRequest: false,
         showResponse: true,

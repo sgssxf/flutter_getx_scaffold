@@ -54,6 +54,7 @@ class GlobalService extends GetxService with WidgetsBindingObserver {
     return this;
   }
 
+
   /// 设置语言变更回调
   void setLocaleChangeCallback(LocaleChangeCallback? localeChangeCallback) {
     this.localeChangeCallback = localeChangeCallback;
