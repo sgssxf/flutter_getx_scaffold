@@ -15,8 +15,7 @@ typedef OnResponseHandler = Future<String?> Function(Response<dynamic> response)
 
 /// 请求处理拦截器
 /// 如返回true则中断后面流程
-typedef OnRequestHandler = Future<bool> Function(
-    RequestOptions options, RequestInterceptorHandler handler);
+typedef OnRequestHandler = Future<bool> Function(RequestOptions options, RequestInterceptorHandler handler);
 
 typedef OnErrorHandler = Future<String?> Function(DioException err);
 
@@ -25,7 +24,7 @@ class HttpService extends GetxService {
   static const showLog = 'showLog';
   static const showError = 'showError';
 
-  static HttpService get to => Get.find();
+  static HttpService get to => Get.put(HttpService());
 
   late final Dio _dio;
   Dio get dio => _dio;
