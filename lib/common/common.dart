@@ -394,7 +394,8 @@ Future<bool> requestPhotosPermission() async {
 
 /// 申请蓝牙权限 仅Android需要申请 IOS默认开启
 Future<bool> requestBluetoothPermission() async {
-  return await PermissionUtil.bluetooth();
+  if (!Platform.isAndroid) return true;
+  return await PermissionUtil.bluetooth().timeout(Duration(seconds: 10), onTimeout: () => false);
 }
 
 /// 生成32位唯一字符串
