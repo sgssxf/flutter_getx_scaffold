@@ -33,11 +33,11 @@ class TextTag extends StatelessWidget {
         weight: FontWeight.w500,
       )
           .padding(
-            horizontal: 10.w,
-            vertical: 4.h,
+            horizontal: 4.w,
+            vertical: 2.h,
           )
           .border(
-            radius: 5.r,
+            radius: 8.r,
             color: color ?? ThemeColor.primary,
             all: 1.4,
           );
@@ -48,11 +48,11 @@ class TextTag extends StatelessWidget {
         weight: FontWeight.bold,
       )
           .padding(
-            horizontal: 10.w,
-            vertical: 4.h,
+            horizontal: 4.w,
+            vertical: 2.h,
           )
           .border(
-            radius: 5.r,
+            radius: 8.r,
             backgroundColor: color ?? ThemeColor.primary,
           );
     }
