@@ -16,12 +16,14 @@ class TextTag extends StatelessWidget {
   final String text;
   final Color? color;
   final bool outline;
+  final FontWeight? weight;
 
   const TextTag(
     this.text, {
     super.key,
     this.color,
     this.outline = false,
+    this.weight = FontWeight.normal,
   });
 
   @override
@@ -30,10 +32,10 @@ class TextTag extends StatelessWidget {
       return TextX.labelSmall(
         text,
         color: color ?? ThemeColor.primary,
-        weight: FontWeight.w500,
+        weight: weight,
       )
           .padding(
-            horizontal: 4.w,
+            horizontal: 6.w,
             vertical: 2.h,
           )
           .border(
@@ -45,10 +47,10 @@ class TextTag extends StatelessWidget {
       return TextX.labelSmall(
         text,
         color: Colors.white,
-        weight: FontWeight.bold,
+        weight: weight,
       )
           .padding(
-            horizontal: 4.w,
+            horizontal: 6.w,
             vertical: 2.h,
           )
           .border(
