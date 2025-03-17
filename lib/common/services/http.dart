@@ -27,6 +27,7 @@ class HttpService extends GetxService {
   static HttpService get to => Get.put(HttpService());
 
   final Dio _dio = Dio();
+  Dio get dio => _dio;
   // 取消请求token
   final CancelToken _cancelToken = CancelToken();
 
