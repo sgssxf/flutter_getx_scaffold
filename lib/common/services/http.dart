@@ -21,8 +21,8 @@ typedef OnErrorHandler = Future<String?> Function(DioException err);
 
 /// 网络请求服务
 class HttpService extends GetxService {
-  static const showLog = 'showLog';
-  static const showError = 'showError';
+  static final showLog = 'showLog';
+  static final showError = 'showError';
 
   static HttpService get to => Get.put(HttpService());
 
