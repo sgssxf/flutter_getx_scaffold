@@ -64,11 +64,13 @@ String getStringAsync(String key, {String defaultValue = ''}) {
 
 /// Returns a JSON if exists in SharedPref
 Map<String, dynamic> getJSONAsync(String key, {Map<String, dynamic>? defaultValue}) {
-  if (sharedPreferences.containsKey(key) && (sharedPreferences.getString(key)?.isNotEmpty ?? false)) {
-    return jsonDecode(sharedPreferences.getString(key)!);
-  } else {
-    return defaultValue ?? {};
+  if (sharedPreferences.containsKey(key)) {
+    final jsonStr = sharedPreferences.getString(key);
+    if (jsonStr?.isNotEmpty == true) {
+      return jsonDecode(jsonStr!) as Map<String, dynamic>;
+    }
   }
+  return defaultValue ?? {};
 }
 
 /// remove key from SharedPref
