@@ -33,7 +33,7 @@ class HttpService extends GetxService {
 
   /// 初始化
   /// [timeout] 请求超时时间
-  Future<HttpService> init({int timeout = 10}) async {
+  Future<HttpService> init({int timeout = 100}) async {
     _dio.options = BaseOptions(
         connectTimeout: Duration(seconds: timeout),
         receiveTimeout: Duration(seconds: timeout),
